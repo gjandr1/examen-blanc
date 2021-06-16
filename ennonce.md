@@ -1,5 +1,15 @@
 ## Ennoncé de l'examen
 
+### Consignes
+
+**Forkez** ce repositiry sur votre compte Github et clonez ce nouveau repository sur votre machine.
+
+Committez et poussez vos changement après **chaque** points de l'exercice.
+
+Respectez au mieux le MVC.
+
+### Exercice
+
 1. Afficher la liste des stagiaires:
     - Mr ou Mme selon le sexe,
     - le nom en majuscule,
@@ -14,11 +24,11 @@
 3. En cliquant sur un nom du point 1 mener à la page associée en point 2
 
 4. (Modifier) idem que sur le point 2 mais afficher dans un formulaire pré rempli
-    - afficher le champ nom prérempli avec le nom
-    - le champ prénom prérempli avec le prénom
+    - afficher le champ nom
+    - le champ prénom
     - 3 champs pour la ddn : 1 champ pour le jour, une liste déroulante pour les mois, un champ pour l'année
-    - deux radio pour le sexe ()
-    - un champ pour le nombre d'enfant (prérempli)
+    - deux radio pour le sexe (Mr et Mme)
+    - un champ pour le nombre d'enfant
     - un ensemble de checkbox (tout ceux de la variable $hobbies) avec ceux de la personne déjà cochés
 
 5. Créer une page séparée pour la sauvegarde des mofifications (point 4).
@@ -31,9 +41,9 @@
     - Les enfants sont optionnels mais cela doit être un entier > 0 si fournis
     - Les hobbies sont optionnels mais doivent être dans la liste si fournis
 
-Vérifiez que votre application est sécurisée en testant les noms suivants:
-- `<i>Albert</i>`
-- `<script>alert('coucou');</script>`
-- `l'étonnant "OHOHOH"`
+6. Vérifiez que votre application est sécurisée en testant les noms suivants:
+    - `<i>Albert</i>`
+    - `<script>alert('coucou');</script>`
+    - `l'étonnant "OHOHOH"`
 
 Bon travail
