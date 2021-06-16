@@ -8,17 +8,18 @@ Committez et poussez vos changement après **chaque** points de l'exercice.
 
 Respectez au mieux le MVC.
 
+Commentez un minimum votre code (principalement les fonctions) en respectant la PHPDoc.
+
 ### Exercice
 
 1. Afficher la liste des stagiaires:
     - Mr ou Mme selon le sexe,
     - le nom en majuscule,
-    - le prenom avec la première lettre en majuscule,
-    - le reste en minuscule.
+    - le prenom avec la première lettre en majuscule et le reste en minuscule.
 
 2. Créer une page qui détaillera un stagiaire dont la position dans le tableau sera passée en paramètre get (query param):
-    - "Aucune personne trouvée" : Si la position est en dehors du tableau.
-    - "Pas de paramètre fournis": Si le paramètre n'est pas fournis.
+    - "Pas de stagiaire connu avec cet id" : Si la position est en dehors du tableau.
+    - "Veuillez fournir un id de stagiaire": Si le paramètre n'est pas fournis.
     - Les Hobbies choisis seront listés par leur noms et non leur trigramme
 
 3. En cliquant sur un nom du point 1 mener à la page associée en point 2
@@ -32,7 +33,7 @@ Respectez au mieux le MVC.
     - un ensemble de checkbox (tout ceux de la variable $hobbies) avec ceux de la personne déjà cochés
 
 5. Créer une page séparée pour la sauvegarde des mofifications (point 4).
-    Valider les valeurs reçues et si cela est valide afficher les données comme en point 2
+    Valider les valeurs reçues et si cela est valide afficher les données comme en point 2.
     Valider :
     - nom doit être rempli, pas de chiffre
     - prénom peut être rempli, pas de chiffre
