@@ -10,59 +10,102 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div>
-    <?php
-    $value = $stagiaires[$_GET["id"]];
-    var_dump($value) ;
-    if ($value["sexe"]=="M"){
-        echo '<p>Mr. '.strtoupper($value["nom"]).' '.ucfirst($value["prenom"]).'</p>';
-    }
-    else{
-        echo '<p>Mme. '.strtoupper($value["nom"]).' '.ucfirst($value["prenom"]).'</p>';
-    }
-    echo '<input type="text" class="form-control" id="nom" name="nom" value="'.$value["nom"].'">';
-    echo '<input type="text" class="form-control" id="prenom" name="prenom" value="'.$value["prenom"].'">';
-    echo '<input type="text" class="form-control" id="ddn" name="ddn" value="'.$value["ddn"].'">';
 
-    echo '<div class="input-group mt-3 mb-3">';
-        echo '<input type="text" class="form-control" placeholder="Jour">';
-        echo '<div class="input-group-prepend">';
-            echo '<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">Mois</button>';
-            echo '<div class="dropdown-menu">';
-                echo '<a class="dropdown-item" href="#">Janvier</a>';
-                echo '<a class="dropdown-item" href="#">Fevrier</a>';
-                echo '<a class="dropdown-item" href="#">Mars</a>';
+<Section class="container-fluid">
+    <div class="container">
+        <?php
+            $value = $stagiaires[$_GET["id"]];
+            var_dump($value) ;
+            //var_dump($hobbies);
+            //var_dump($value["hobbies"]);
+            $hob = $value["hobbies"];
+
+
+
+            /*--Nom--*/
+
+            echo '<div class="form-group">';
+                echo '<label for="nom" >Nom :</label>';
+                echo '<input type="text" class="form-control" id="nom" name="nom" value="'.$value["nom"].'">';
             echo '</div>';
-        echo '</div>';
-        echo '<input type="text" class="form-control" placeholder="Annee">';
-    echo '</div>';
 
-    echo '<div class="form-check">';
-      echo '<label class="form-check-label">';
-        if ($value["sexe"]=='M'){
-            echo '<input type="radio" class="form-check-input" name="optradio" checked>Mr';
-        }
-        else{
-            echo '<input type="radio" class="form-check-input" name="optradio" >Mr';
-        }
-      echo '</label>';
-    echo '</div>';
-    echo '<div class="form-check">';
-        echo '<label class="form-check-label">';
-        if ($value["sexe"]=='F'){
-            echo '<input type="radio" class="form-check-input" name="optradio" checked>Mme';
-        }
-        else{
-            echo '<input type="radio" class="form-check-input" name="optradio" >Mme';
-        }
+            /*--Prenom--*/
+            echo '<div class="form-group">';
+                echo '<label for="prenom" >Prenom :</label>';
+                echo '<input type="text" class="form-control" id="prenom" name="prenom" value="'.$value["prenom"].'">';
+            echo '</div>';
 
-        echo '</label>';
-    echo '</div>';
-    echo '<input type="text" class="form-control" id="ddn" name="ddn" value="'.$value["enfants"].'">';
+            /*--DDN--*/
+            echo '<div class="form-group">';
+                echo '<label for="ddn" >DDN :</label>';
+                $date = explode('/', $value["ddn"]);
+                $month = $date[0];
+                $day   = $date[1];
+                $year  = $date[2];
+                echo '<div class="input-group mt-3 mb-3">';
+                    echo '<input type="text" class="form-control" placeholder="Jour" value="'.$day.'"  id="ddn" name="ddn">';
+                    echo '<div class="form-group">';
+                        echo '<select name="" id="" class="form-control">';
+                            echo '<option value="" >Janvier</option>';
+                            echo '<option value="" >Fevrier</option>';
+                            echo '<option value="" >Mars</option>';
+                            echo '<option value="" >Avril</option>';
+                            echo '<option value="" >Mai</option>';
+                            echo '<option value="" >Juin</option>';
+                            echo '<option value="" >Juillet</option>';
+                            echo '<option value="" >Aout</option>';
+                            echo '<option value="" >Septembre</option>';
+                            echo '<option value="" >Octobre</option>';
+                            echo '<option value="" >Novembre</option>';
+                            echo '<option value="" >Decembre</option>';
+                        echo '</select>';
+                    echo '</div>';
+                    echo '<input type="text" class="form-control" placeholder="Annee" value="'.$year.'"  id="ddn" name="ddn">';
+                echo '</div>';
+            echo '</div>';
+
+            /*--Sexe--*/
+            echo '<div class="form-group">';
+                echo '<label for="sexe" >Sexe :</label>';
+                echo '<div class="form-check">';
+                    echo '<label class="form-check-label">';
+                    if ($value["sexe"]=='M'){
+                        echo '<input type="radio" class="form-check-input" name="optradio" checked>Mr';
+                    }
+                    else{
+                        echo '<input type="radio" class="form-check-input" name="optradio" >Mr';
+                    }
+                    echo '</label>';
+                echo '</div>';
+            echo '</div>';
+
+            /*--Enfant--*/
+            echo '<div class="form-group">';
+                echo '<label for="enfants" >Enfant :</label>';
+                echo '<input type="text" class="form-control" id="enfants" name="enfants" value="'.$value["enfants"].'">';
+
+            echo '</div>';
+
+            /*--Hobbie--*/
+            foreach ($hobbies as $valueHob){
+                //var_dump($valueHob) ;
+                echo '<div class="form-check">';
+                    echo '<label class="form-check-label">';
+                        foreach ($hob as $valhob){
+                            if ($valueHob==$hobbies[$valhob]){
+                                echo '<input type="checkbox" class="form-check-input" value="" checked>'.$valueHob.'';
+                            }
+                        }
+                    echo '<input type="checkbox" class="form-check-input" value="">'.$valueHob.'';
+
+                    echo '</label>';
+                echo '</div>';
 
 
-    ?>
-</div>
+            }
+        ?>
+    </div>
+</Section>
 
 </body>
 </html>
