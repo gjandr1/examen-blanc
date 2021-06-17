@@ -7,23 +7,22 @@
 </head>
 <body>
 <div>
+    <ul>
+
+
     <?php
     $i=0;
     foreach ($stagiaires as $value){
-        //var_dump($value) ;
-        echo $i;
         if ($value["sexe"]=="M"){
-            echo '<a href="stagiaire.php?id='.$i.'" id"stag">Mr. '.strtoupper($value["nom"]).' '.ucfirst($value["prenom"]).'</a><br>';
+            echo '<li><a href="stagiaire.php?id='.$i.'" id"stag">Mr. '.strtoupper($value["nom"]).' '.ucfirst(strtolower($value["prenom"])).'</a></li>';
         }
         else{
-            echo '<a href="stagiaire.php?id='.$i.'">Mme. '.strtoupper($value["nom"]).' '.ucfirst($value["prenom"]).'</a><br>';
+            echo '<li><a href="stagiaire.php?id='.$i.'">Mme. '.strtoupper($value["nom"]).' '.ucfirst(strtolower($value["prenom"])).'</a></li>';
         }
         $i++;
-
-
     }
     ?>
-
+    </ul>
 </div>
 
 </body>

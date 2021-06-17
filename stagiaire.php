@@ -66,15 +66,28 @@
                 echo '<label for="sexe" >Sexe :</label>';
                 echo '<div class="form-check">';
                     echo '<label class="form-check-label">';
-                    if ($value["sexe"]=='M'){
-                        echo '<input type="radio" class="form-check-input" name="optradio" checked>Mr';
-                    }
-                    else{
-                        echo '<input type="radio" class="form-check-input" name="optradio" >Mr';
-                    }
+                        if ($value["sexe"]=='M'){
+                            echo '<input type="radio" class="form-check-input" name="optradio" checked>Mr';
+                        }
+                        else{
+                            echo '<input type="radio" class="form-check-input" name="optradio" >Mr';
+                        }
+                    echo '</label>';
+                echo '</div>';
+
+                echo '<div class="form-check">';
+                    echo '<label class="form-check-label">';
+                        if ($value["sexe"]=='F'){
+                            echo '<input type="radio" class="form-check-input" name="optradio" checked>Mme';
+                        }
+                        else{
+                            echo '<input type="radio" class="form-check-input" name="optradio" >Mme';
+                        }
                     echo '</label>';
                 echo '</div>';
             echo '</div>';
+
+
 
             /*--Enfant--*/
             echo '<div class="form-group">';
