@@ -15,15 +15,12 @@
     <div class="container">
         <?php
             $value = $stagiaires[$_GET["id"]];
-            var_dump($value) ;
+            $hob = $value["hobbies"];
+            //var_dump($value) ;
             //var_dump($hobbies);
             //var_dump($value["hobbies"]);
-            $hob = $value["hobbies"];
-
-
 
             /*--Nom--*/
-
             echo '<div class="form-group">';
                 echo '<label for="nom" >Nom :</label>';
                 echo '<input type="text" class="form-control" id="nom" name="nom" value="'.$value["nom"].'">';
@@ -91,17 +88,15 @@
                 //var_dump($valueHob) ;
                 echo '<div class="form-check">';
                     echo '<label class="form-check-label">';
+                        echo '<input type="checkbox" class="form-check-input" value="">'.$valueHob.'';
                         foreach ($hob as $valhob){
                             if ($valueHob==$hobbies[$valhob]){
-                                echo '<input type="checkbox" class="form-check-input" value="" checked>'.$valueHob.'';
+                                //echo $hobbies[$valhob];
+                                echo '<input type="checkbox" class="form-check-input" value="" checked>';
                             }
                         }
-                    echo '<input type="checkbox" class="form-check-input" value="">'.$valueHob.'';
-
                     echo '</label>';
                 echo '</div>';
-
-
             }
         ?>
     </div>
